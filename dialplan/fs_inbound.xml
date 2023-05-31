@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<include>
+    <context name="fs_inbound">
+        <extension name="unloop">
+            <condition field="$${unroll_loops}" expression="^true$" />
+            <condition field="${sip_looped_call}" expression="^true$">
+                <action application="deflect" data="${destination_number}" />
+            </condition>
+        </extension>
+        <extension name="fs_inbound">
+            <condition field="destination_number" expression="^(1000)$">
+                <!--action application="bridge" data="user/1000@$${domain}"/-->
+                 <action application="bridge" data="user/1000@$${asterisk}"/>
+                <action application="hangup"/>
+            </condition>
+        </extension>
+        <extension name="fs_outbound">
+            <!--condition field="destination_number" expression="^(\d{10,15})$"-->
+            <condition field="destination_number" expression="^(\d\d\d\d)$">
+                <action application="export" data="execute_on_answer=record_session $${recordings_dir}/${strftime(%Y%m%d%H%M%S)}_${caller_id_number}.mp4"/>
+                <action application="bridge" data="sofia/gateway/fs_inbound/$1"/>
+                <action application="hangup"/>
+            </condition>
+        </extension>
+        <extension name="local">
+            <!--condition field="destination_number" expression="^\d{4}$"-->
+            <condition field="destination_number" expression="^(1000)$">
+                <action application="answer" />
+                <action application="sleep" data="1000" />
+                <action application="bridge" data="user/${destination_number}@$${domain}" />
+                <action application="hangup" />
+            </condition>
+        </extension>
+    </context>
+</include>

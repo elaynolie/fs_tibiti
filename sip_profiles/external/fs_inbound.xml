@@ -1,0 +1,16 @@
+<include>
+    <gateway name="fs_inbound">
+      <param name="username" value="fs_inbound"/>
+      <param name="password" value="killreal01"/>
+      <param name="realm" value="10.91.0.121"/>
+      <param name="from-user" value="fs_inbound"/>
+      <param name="from-domain" value="10.91.0.121"/>
+      <param name="proxy" value="10.91.0.121:5061"/>
+      <param name="expire-seconds" value="60"/>
+      <param name="register" value="true"/>
+      <param name="retry-seconds" value="30"/>
+      <param name="context" value="fs_inbound"/>
+      <param name="caller-id-in-from" value="yes"/>
+    </gateway>
+</include>
+
