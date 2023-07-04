@@ -16,7 +16,7 @@
     
     <!-- <param name="capture-server" value="udp:homer.domain.com:5060;hep=3;capture_id=100"/> -->
   </global_settings>
-
+  <param name="extension-in-contact" value="true"/>
   <!--
       The rabbit hole goes deep.  This includes all the
       profiles in the sip_profiles directory that is up
@@ -24,6 +24,8 @@
   -->
   <profiles>
     <X-PRE-PROCESS cmd="include" data="../sip_profiles/*.xml"/>
+    <param name="acl" value="domains"/>
+
   </profiles>
 
 </configuration>

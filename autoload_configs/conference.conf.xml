@@ -1,5 +1,3 @@
-<!-- http://wiki.freeswitch.org/wiki/Mod_conference -->
-<!-- None of these paths are real if you want any of these options you need to really set them up -->
 <configuration name="conference.conf" description="Audio Conference">
   <!-- Advertise certain presence on startup . -->
   <advertise>
@@ -11,18 +9,18 @@
   <!-- Note: none and default are reserved names for group names.  Disabled if dist-dtmf member flag is set. -->	
   <caller-controls>
     <group name="default">
-      <control action="mute" digits="0" no-sound="true"/>
-      <control action="deaf mute" digits="*" no-sound="true"/>
-      <control action="energy up" digits="9" no-sound="true"/>
-      <control action="energy equ" digits="8" no-sound="true"/>
-      <control action="energy dn" digits="7" no-sound="true"/>
-      <control action="vol talk up" digits="3" no-sound="true"/>
-      <control action="vol talk zero" digits="2" no-sound="true"/>
-      <control action="vol talk dn" digits="1" no-sound="true"/>
-      <control action="vol listen up" digits="6" no-sound="true"/>
-      <control action="vol listen zero" digits="5" no-sound="true"/>
-      <control action="vol listen dn" digits="4" no-sound="true"/>
-      <control action="hangup" digits="#" no-sound="true"/>
+      <control action="deaf mute" digits="*" data="empty_1c.wav"/>
+      <control action="deaf mute" digits="*" data="empty_1c.wav"/>
+      <control action="energy up" digits="9" data="empty_1c.wav"/>
+      <control action="energy equ" digits="8" data="empty_1c.wav"/>
+      <control action="energy dn" digits="7" data="empty_1c.wav"/>
+      <control action="vol talk up" digits="3" data="empty_1c.wav"/>
+      <control action="vol talk zero" digits="2" data="empty_1c.wav"/>
+      <control action="vol talk dn" digits="1" data="empty_1c.wav"/>
+      <control action="vol listen up" digits="6" data="empty_1c.wav"/>
+      <control action="vol listen zero" digits="5" data="empty_1c.wav"/>
+      <control action="vol listen dn" digits="4" data="empty_1c.wav"/>
+      <control action="hangup" digits="#" data="empty_1c.wav"/>
     </group>
   </caller-controls>
 

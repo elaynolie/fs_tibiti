@@ -80,6 +80,9 @@
     <param name="watchdog-enabled" value="no"/>
     <param name="watchdog-step-timeout" value="30000"/>
     <param name="watchdog-event-timeout" value="30000"/>
+    <param name="allow-anonymous" value="true"/>
+    <param name="auth-calls" value="false"/>
+
 
     <param name="log-auth-failures" value="false"/>
     <param name="forward-unsolicited-mwi-notify" value="false"/>
@@ -342,6 +345,7 @@
     <!-- disable register and transfer which may be undesirable in a public switch -->
     <!--<param name="disable-transfer" value="true"/>-->
     <!--<param name="disable-register" value="true"/>-->
+    <param name="disable-register" value="true"/>
 
     <!--
         enable-3pcc can be set to either 'true' or 'proxy', true accepts the call

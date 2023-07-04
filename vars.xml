@@ -438,7 +438,10 @@
   <X-PRE-PROCESS cmd="set" data="video_mute_png=$${images_dir}/default-mute.png"/>
   <X-PRE-PROCESS cmd="set" data="video_no_avatar_png=$${images_dir}/default-avatar.png"/>
   <X-PRE-PROCESS cmd="set" data="asterisk=$${local_ip_v4}:5061"/>
-
+  <X-PRE-PROCESS cmd="set" data="event_handlers=mod_event_socket"/>
+  <X-PRE-PROCESS cmd="set" data="event_socket_ip=127.0.0.1"/>
+  <X-PRE-PROCESS cmd="set" data="event_socket_port=8021"/>
+  <X-PRE-PROCESS cmd="set" data="event_socket_password=strong12"/>   
 
 
 </include>

@@ -356,7 +356,7 @@
     <extension name="nb_conferences">
       <condition field="destination_number" expression="^(30\d{2})$">
 	<action application="answer"/>
-	<action application="conference" data="$1-${domain_name}@default"/>
+	<action application="conference" data="$1-${domain_name}@default no-announce"/>
       </condition>
     </extension>
 
@@ -387,7 +387,7 @@
 	<action application="answer"/>
 	<action application="send_display" data="FreeSWITCH Conference|$1"/>
 	<action application="set" data="conference_member_flags=join-vid-floor"/>
-	<action application="conference" data="$1@video-mcu-stereo"/>
+	<action application="conference" data="$1@video-mcu-stereo no-announce"/>
       </condition>
     </extension>
 
@@ -410,7 +410,7 @@
     <extension name="cdquality_conferences">
       <condition field="destination_number" expression="^(35\d{2})$">
 	<action application="answer"/>
-	<action application="conference" data="$1@video-mcu-stereo"/>
+	<action application="conference" data="$1@video-mcu-stereo no-announce"/>
       </condition>
     </extension>
 
